@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RESTAURANTE PREMIUM/RESERVA</title>
+
+<!-- Bootstrap CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reserva.css">
+
+
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar navbar-expand-lg" style="background-color: hsl(0, 0%, 20%);">
+
+<div class="container-fluid">
+
+<a class="navbar-brand text-white" href="index.html">RESTAURANTE PREMIUM</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="index.html">Inicio</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="acerca.html">Acerca de Nosotros</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="galeria.html">Galería</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="contacto.html">Contacto</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="evento.html">Eventos</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="reserva.html">Reserva</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="menu.html">Menú</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+<section class="reservation-form container mt-5">
+
+<h2 class="mb-4">Reserva tu mesa</h2>
+
+<form id="reservationForm">
+
+<div class="mb-3">
+
+<label for="name" class="form-label">Nombre Completo:</label>
+
+<input type="text" id="name" name="name" class="form-control" required placeholder="Tu nombre completo">
+
+</div>
+
+<div class="mb-3">
+
+<label for="email" class="form-label">Correo Electrónico:</label>
+
+<input type="email" id="email" name="email" class="form-control" required placeholder="Tu correo electrónico">
+
+</div>
+
+<div class="mb-3">
+
+<label for="phone" class="form-label">Teléfono:</label>
+
+<input type="tel" id="phone" name="phone" class="form-control" required placeholder="Tu número de teléfono">
+
+</div>
+
+<div class="mb-3">
+
+<label for="date" class="form-label">Fecha de la Reserva:</label>
+
+<input type="date" id="date" name="date" class="form-control" required>
+
+</div>
+
+<div class="mb-3">
+
+<label for="time" class="form-label">Hora de la Reserva:</label>
+
+<input type="time" id="time" name="time" class="form-control" required>
+
+</div>
+
+<div class="mb-3">
+
+<label for="guests" class="form-label">Número de Personas:</label>
+
+<input type="number" id="guests" name="guests" class="form-control" min="1" max="10" required placeholder="Número de personas">
+
+</div>
+
+<div class="mb-3">
+
+<label for="table" class="form-label">Mesa Preferida:</label>
+
+<select id="table" name="table" class="form-select">
+
+<option value="ventana">Mesa junto a la ventana</option>
+
+<option value="privada">Mesa en área privada</option>
+
+<option value="terraza">Mesa en la terraza</option>
+
+<option value="comedor">Mesa en el comedor principal</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label for="comments" class="form-label">Comentarios Especiales:</label>
+
+<textarea id="comments" name="comments" class="form-control" rows="4" placeholder="¿Alguna petición especial?"></textarea>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Reservar</button>
+
+</form>
+
+
+
+<!-- Contenedor de notificaciones -->
+
+<div id="alertContainer" class="mt-4"></div>
+
+</section>
+
+</main>
+
+
+
+<!-- JavaScript -->
+
+<script>
+
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+
+event.preventDefault(); // Evita el envío real del formulario
+
+
+
+// Mostrar una alerta personalizada con opciones de confirmar o cancelar
+
+const alertContainer = document.getElementById('alertContainer');
+
+alertContainer.innerHTML = `
+
+<div class="alert alert-success d-flex justify-content-between align-items-center flex-column">
+
+<p>¡Tu mesa ha sido reservada exitosamente!</p>
+
+<div>
+
+<button id="confirmButton" class="btn btn-success me-2">Confirmar</button>
+
+<button id="cancelButton" class="btn btn-danger">Cancelar</button>
+
+</div>
+
+</div>
+
+`;
+
+
+
+// Reiniciar el formulario
+
+this.reset();
+
+
+
+// Agregar evento para confirmar la reserva
+
+document.getElementById('confirmButton').addEventListener('click', function() {
+
+alertContainer.innerHTML = `
+
+<div class="alert alert-info">
+
+¡Tu reservación ha sido confirmada! Nos vemos pronto.
+
+</div>
+
+`;
+
+setTimeout(() => alertContainer.innerHTML = '', 5000);
+
+});
+
+
+
+// Agregar evento para cancelar la reserva
+
+document.getElementById('cancelButton').addEventListener('click', function() {
+
+alertContainer.innerHTML = `
+
+<div class="alert alert-warning">
+
+La reserva ha sido cancelada.
+
+</div>
+
+`;
+
+setTimeout(() => alertContainer.innerHTML = '', 5000);
+
+});
+
+});
+
+</script>
+
+
+
+<!-- Bootstrap JS and dependencies -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+
+
+
+
+
+
+</html>

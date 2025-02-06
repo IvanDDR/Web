@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANTE PREMIUM/CONTACTO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/contacto.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: hsl(0, 0%, 20%);">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="index.html">RESTAURANTE PREMIUM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="acerca.html">Acerca de Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="galeria.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="evento.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="reserva.html">Reserva</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="menu.html">Menú</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!-- Sección de Contacto -->
+     <section class="container my-5">
+        <div class="row">
+            <!-- Formulario de Contacto -->
+            <div class="col-md-6 mb-4">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+                <div id="notification" class="alert alert-success mt-3 d-none" role="alert">
+                    ¡Mensaje enviado correctamente!
+                </div>
+            </div>
+            
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Evita el envío real del formulario
+            
+                    // Mostrar una alerta en pantalla
+                    alert('¡Tu mensaje ha sido enviado correctamente!');
+            
+                    // Mostrar el mensaje de notificación
+                    const notification = document.getElementById('notification');
+                    notification.classList.remove('d-none'); // Mostrar la notificación
+            
+                    // Ocultar la notificación después de 3 segundos
+                    setTimeout(() => {
+                        notification.classList.add('d-none');
+                    }, 3000);
+            
+                    // Opcional: Reiniciar el formulario
+                    this.reset();
+                });
+            </script>
+            
+
+            <!-- Información del Restaurante -->
+            <div class="col-md-6" id="info">
+                <h2>Información del Restaurante</h2>
+                <ul class="list-unstyled">
+                    <li><strong>Dirección:</strong> CARRERA 46 No 93-52</li>
+                    <li><strong>Teléfono:</strong>  384 745 1236</li>
+                    <li><strong>Correo Electrónico:</strong> info@restaurantepremium.com </li>
+                    <li><strong>Horario:</strong>
+                        <ul>
+                            <li>Lunes a Viernes: 12:00 PM - 10:00 PM</li>
+                            <li>Sábados: 1:00 PM - 11:00 PM</li>
+                            <li>Domingos: 1:00 PM - 9:00 PM</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

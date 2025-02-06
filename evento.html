@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANTE PREMIUM/EVENTOS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/evento.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: hsl(0, 0%, 20%);">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="index.html">RESTAURANTE PREMIUM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="acerca.html">Acerca de Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="galeria.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="evento.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="reserva.html">Reserva</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="menu.html">Menú</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="eventos">
+            <h2>Próximos Eventos</h2>
+            <div class="evento-item" onclick="openModal('modal1')">
+                
+                <h3>Noche Italiana</h3>
+                <p>Disfruta de una experiencia culinaria italiana. <span class="ver-mas">Ver más</span></p>
+            </div>
+            <div class="evento-item" onclick="openModal('modal2')">
+                
+                <h3>Música en Vivo</h3>
+                <p>Música en vivo cada viernes. <span class="ver-mas">Ver más</span></p>
+            </div>
+            <div class="evento-item" onclick="openModal('modal3')">
+                
+                <h3>Degustación de Vinos</h3>
+                <p>Cata de vinos locales e internacionales. <span class="ver-mas">Ver más</span></p>
+            </div>
+        </section>
+
+        <section class="promociones">
+            <h2>Promociones Especiales</h2>
+            <div class="promocion-item" onclick="openModal('modal4')">
+                
+                <h3>2x1 en Cocteles</h3>
+                <p>Todos los jueves 2x1 en cocteles. <span class="ver-mas">Ver más</span></p>
+            </div>
+            <div class="promocion-item" onclick="openModal('modal5')">
+                
+                <h3>Descuento en Almuerzos</h3>
+                <p>15% de descuento en almuerzos. <span class="ver-mas">Ver más</span></p>
+            </div>
+            <div class="promocion-item" onclick="openModal('modal6')">
+                
+                <h3>Cena Romántica</h3>
+                <p>Menú especial para dos. <span class="ver-mas">Ver más</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Noche Italiana</h2>
+            <p>Disfruta de platos tradicionales italianos como pasta fresca, pizzas artesanales, y más, acompañados de música en vivo. Fecha: 25 de Octubre, 2024</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Música en Vivo</h2>
+            <p>Cada viernes por la noche, disfruta de música en vivo de artistas locales en nuestro restaurante. Fecha: Todos los viernes, 8:00 PM</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Degustación de Vinos</h2>
+            <p>Únete a nuestra cata de vinos premium, una oportunidad única para degustar una selección de vinos locales e internacionales. Fecha: 12 de Noviembre, 2024</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>2x1 en Cocteles</h2>
+            <p>Promoción especial de 2x1 en cocteles todos los jueves de 6:00 PM a 8:00 PM.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Descuento en Almuerzos</h2>
+            <p>De lunes a viernes, disfruta de un 15% de descuento en todos los platos principales del almuerzo.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Cena Romántica</h2>
+            <p>Reserva una cena especial para dos personas con un ambiente íntimo y un menú exclusivo por solo $50.</p>
+        </div>
+    </div>
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/evento.js"></script>
+</body>
+</html>
