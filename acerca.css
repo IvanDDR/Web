@@ -1,0 +1,98 @@
+/* Estilos generales del body */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif; /* Fuente limpia y moderna */
+}
+
+/* Header */
+header {
+    background: hsl(0, 0%, 20%);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Centraliza los elementos del menú */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Secciones */
+section {
+    padding: 5px;
+    margin: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente para mejorar la legibilidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+/* Estilos para el h2 */
+h2 {
+    text-align: center;
+    font-size: 2.5em; /* Un poco más grande */
+    font-weight: bold;
+    color: #f4f4f4; /* Color ligeramente más claro */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Párrafos */
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #ddd; /*
+     Texto gris claro para mayor contraste */
+}
+#info {
+    text-align: justify;
+}
+
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para resaltar la imagen */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}

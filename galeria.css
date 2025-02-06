@@ -1,0 +1,110 @@
+body {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    background-image: url('../img/Fondo.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover; /* Hace que la imagen cubra toda la página */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 100vh; /* Asegura que el body cubra al menos el 100% de la altura de la ventana */
+}
+
+header {
+    background: hsl(0, 0%, 20%);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    color: #fff;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery-item p {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+/* Estilos de la galería deslizante */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 50px auto;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    animation: slide 15s linear infinite;
+}
+
+.slide {
+    min-width: 20%;
+    transition: transform 0.5s ease;
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 300px; /* Limitar tamaño máximo de las imágenes */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
